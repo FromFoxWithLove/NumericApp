@@ -19,7 +19,7 @@ namespace Numeric.API.Controllers
         public IActionResult GetRandomValue()
         {
             var random = new Random();
-            return Ok(random.Next(-1000, 1001));
+            return Ok("Number: " + random.Next(-1000, 1001));
         }
 
 
