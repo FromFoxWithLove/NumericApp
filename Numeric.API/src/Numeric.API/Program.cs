@@ -1,3 +1,6 @@
+using FluentValidation.AspNetCore;
+using Numeric.BusinessLogic.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddBusinessLogic();
+builder.Services.AddControllers()
+    .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Program>());
 
 var app = builder.Build();
 
