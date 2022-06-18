@@ -22,9 +22,9 @@ namespace Numeric.BusinessLogic.Services
             _validator = validator;
         }
 
-        public ValueServiceResult<double> Calculate(string expression)
+        public ValueServiceResult<string> Calculate(string expression)
         {
-            var serviceResult = new ValueServiceResult<double>();
+            var serviceResult = new ValueServiceResult<string>();
 
             try
             {
@@ -33,7 +33,15 @@ namespace Numeric.BusinessLogic.Services
                 if (isValid)
                 {
                     var result = _calculator.Calculate(expression);
-                    serviceResult.WithValue(result);
+                    
+                    if (double.IsInfinity(result))
+                    {
+                        serviceResult.WithValue("Infinity");
+                    }
+                    else
+                    {
+                        serviceResult.WithValue(result.ToString());
+                    }
                 }
                 else
                 {

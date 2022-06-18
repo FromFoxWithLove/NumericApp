@@ -18,9 +18,17 @@ namespace Numeric.API.Controllers
         [HttpPut]
         public IActionResult Calculate([FromBody] CalculatorRequest request)
         {
-            var result = _service.Calculate(request.Expression);
+            try
+            {
+                var result = _service.Calculate(request.Expression);
+                return MapResponse(result, x => x);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
-            return MapResponse(result, x => x);
+            return Ok();
         }
     }
 }

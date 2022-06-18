@@ -4,6 +4,6 @@ namespace Numeric.BusinessLogic.Interfaces
 {
     public interface ICalculatorService
     {
-        ValueServiceResult<double> Calculate(string expression);
+        ValueServiceResult<string> Calculate(string expression);
     }
 }
