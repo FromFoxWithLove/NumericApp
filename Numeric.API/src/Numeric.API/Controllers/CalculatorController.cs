@@ -15,20 +15,19 @@ namespace Numeric.API.Controllers
             _service = service;
         }
 
+        [HttpGet]
+        public IActionResult GetRandomValue()
+        {
+            var random = new Random();
+            return Ok(random.Next(-1000, 1001));
+        }
+
+
         [HttpPut]
         public IActionResult Calculate([FromBody] CalculatorRequest request)
         {
-            try
-            {
-                var result = _service.Calculate(request.Expression);
-                return MapResponse(result, x => x);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-
-            return Ok();
+            var result = _service.Calculate(request.Expression);
+            return MapResponse(result, x => x);
         }
     }
 }
