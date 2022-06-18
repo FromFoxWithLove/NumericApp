@@ -1,11 +1,12 @@
-﻿using Calculator.Abstractions;
+﻿using Calculator;
+using Calculator.Abstractions;
 using Calculator.Exceptions;
 using Moq;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Calculator.Tests
+namespace Numeric.Tests.UnitTests.Services.Calculator
 {
     public class Calculator_UT
     {
@@ -19,7 +20,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(false);
             var mockParser = new Mock<IExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             Action act = () => calculator.Calculate(expression);
@@ -37,7 +38,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(false);
             var mockParser = new Mock<IExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             Action act = () => calculator.Calculate(expression);
@@ -55,7 +56,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(false);
             var mockParser = new Mock<IExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             Action act = () => calculator.Calculate(expression);
@@ -88,7 +89,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(true);
             var mockParser = new Mock<ExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             Action act = () => calculator.Calculate(expression);
@@ -115,7 +116,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(true);
             var mockParser = new Mock<ExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             Action act = () => calculator.Calculate(expression);
@@ -142,7 +143,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(false);
             var mockParser = new Mock<IExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             Action act = () => calculator.Calculate(expression);
@@ -182,7 +183,7 @@ namespace Calculator.Tests
             mockValidator.Setup(x => x.Validate(It.IsAny<string>())).Returns(true);
             var mockParser = new Mock<ExpressionParser>();
 
-            var calculator = new Calculator(mockValidator.Object, mockParser.Object);
+            var calculator = new CalculatorClass(mockValidator.Object, mockParser.Object);
 
             // Act
             var result = calculator.Calculate(expression);

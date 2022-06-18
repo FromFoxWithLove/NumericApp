@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    public class Calculator : ICalculator
+    public class CalculatorClass : ICalculator
     {
         private readonly IValidator _validator;
         private readonly IExpressionParser _parser;
 
-        public Calculator(IValidator validator, 
+        public CalculatorClass(IValidator validator, 
             IExpressionParser parser)
         {
             _validator = validator;

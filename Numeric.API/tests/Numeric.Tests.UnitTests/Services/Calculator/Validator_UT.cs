@@ -1,12 +1,9 @@
-﻿using Calculator.Enums;
+﻿using Calculator;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace Calculator.Tests
+namespace Numeric.Tests.UnitTests.Services.Calculator
 {
     public class Validator_UT
     {

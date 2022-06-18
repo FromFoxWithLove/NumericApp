@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - tests", "03 - tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeric.Tests.UnitTests", "tests\Numeric.Tests.UnitTests\Numeric.Tests.UnitTests.csproj", "{7E6558BC-A19D-42ED-A1CE-642BA843D8BF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeric.API", "src\Numeric.API\Numeric.API.csproj", "{4275A06B-FBD9-48A5-8283-CE125A0429FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeric.BusinessLogic", "src\Numeric.BusinessLogic\Numeric.BusinessLogic.csproj", "{B7264255-D916-4ACB-BFDE-DF54B6C2C9F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{7E6558BC-A19D-42ED-A1CE-642BA843D8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E6558BC-A19D-42ED-A1CE-642BA843D8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E6558BC-A19D-42ED-A1CE-642BA843D8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4275A06B-FBD9-48A5-8283-CE125A0429FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4275A06B-FBD9-48A5-8283-CE125A0429FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4275A06B-FBD9-48A5-8283-CE125A0429FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4275A06B-FBD9-48A5-8283-CE125A0429FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7264255-D916-4ACB-BFDE-DF54B6C2C9F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7264255-D916-4ACB-BFDE-DF54B6C2C9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7264255-D916-4ACB-BFDE-DF54B6C2C9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7264255-D916-4ACB-BFDE-DF54B6C2C9F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{30F0A135-278C-4C78-88E1-9DE0EDDB5AAE} = {E45C131F-745D-4919-AC55-8608160A6761}
 		{7E6558BC-A19D-42ED-A1CE-642BA843D8BF} = {0A209206-3CD4-4216-921B-503A32270A39}
+		{4275A06B-FBD9-48A5-8283-CE125A0429FB} = {E45C131F-745D-4919-AC55-8608160A6761}
+		{B7264255-D916-4ACB-BFDE-DF54B6C2C9F3} = {E45C131F-745D-4919-AC55-8608160A6761}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6879B2B0-AB6C-4570-A268-26939CA47029}
