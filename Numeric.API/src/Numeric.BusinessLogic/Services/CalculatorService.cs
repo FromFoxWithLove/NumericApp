@@ -3,14 +3,15 @@ using Calculator.Exceptions;
 using Numeric.BusinessLogic.Extensions;
 using Numeric.BusinessLogic.Interfaces;
 using Numeric.BusinessLogic.Models;
+using System.Text.RegularExpressions;
 
 namespace Numeric.BusinessLogic.Services
 {
     public class CalculatorService : ICalculatorService
     {
         public const string ValidateError = "Invalid expression";
-        public const string NegativeNumberToFractionalPowerError = "Impossible to raise a negative number to a fractional power";
-        public const string DevideByZeroError = "Impossible to devide a number by zero";
+        public const string NegativeNumberToFractionalPowerError = "Fractional power";
+        public const string DevideByZeroError = "Devide by zero";
 
         private readonly ICalculator _calculator;
         private readonly IValidator _validator;
@@ -28,6 +29,7 @@ namespace Numeric.BusinessLogic.Services
 
             try
             {
+                expression = Regex.Replace(expression, @"\s+", "");
                 var isValid = _validator.Validate(expression);
 
                 if (isValid)

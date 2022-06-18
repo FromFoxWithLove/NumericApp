@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { CalculatorService } from 'src/app/_services/calculator/calculator.service';
 
 @Component({
   selector: 'app-calculator',
@@ -7,15 +8,23 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit{
 
-  constructor() { }
+  constructor(private calculatorService: CalculatorService) { }
 
   expression: string = ''
+
+  isNotExpression: boolean = false;
 
   ngOnInit(): void {
   }
 
   addCharacter(character: string) {
-    this.expression = this.expression + character;
+    if (this.isNotExpression) {
+      this.expression = character;
+      this.isNotExpression = false;
+    }
+    else {
+      this.expression = this.expression + character;
+    }
   }
 
   clear() {
@@ -27,8 +36,23 @@ export class CalculatorComponent implements OnInit{
       this.expression = this.expression.slice(0, this.expression.length - 3);
     }
     else {
-      this.expression = this.expression.slice(0, this.expression.length - 3);
+      this.expression = this.expression.slice(0, this.expression.length - 1);
     }
+  }
+
+  calculate() {
+    this.calculatorService.Calculate(this.expression).subscribe(response => {
+      this.clear();
+      this.expression = response;
+      let parsedResponse = parseFloat(response);
+      if (isNaN(parsedResponse)) {
+        this.isNotExpression = true;
+      }
+    }, error => {
+      console.log(error);
+      this.isNotExpression = true;
+      this.expression = error.error.message;
+    })
   }
 
 }

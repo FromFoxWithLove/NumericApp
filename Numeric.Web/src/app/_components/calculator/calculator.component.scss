@@ -29,11 +29,11 @@
 .inner-page {
     background-color: #F4E9CD;
     font-size: 3rem;
+    min-height: 585px;
     width: calc(100vw - 100px);
     height: calc(100vh - 100px);
     margin-top: 25px;
     box-shadow: #EEE9D1 5px 5px, #E7E3B4 10px 10px, #D9D77B 15px 15px, #CBCB42 20px 20px, #C4C526 25px 25px;
-    //box-shadow: rgba(12, 138, 255, 0.4) 5px 5px, rgba(12, 138, 255, 0.3) 10px 10px, rgba(12, 138, 255, 0.2) 15px 15px, rgba(12, 138, 255, 0.1) 20px 20px, rgba(12, 138, 255, 0.05) 25px 25px;
 }
 
 .title {
@@ -49,9 +49,9 @@
 }
 
 .input-area {
-    background-color: black;
+    background-color: rgb(42, 42, 42);
     color: white;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: strawberry;
     width: 320px;
     height: 61px;
@@ -65,6 +65,10 @@
     white-space: nowrap;
     direction: flex;
     justify-content: flex-end;
+    border-left: solid #000000;
+    border-top: solid #000000;
+    border-right: solid #5e5e5e;
+    border-bottom: solid #5e5e5e;
 }
 
 .inner-div {
@@ -79,8 +83,8 @@
     height: 60px;
     margin: 3px;
     background-color: #6AB547;
-    border-left: solid #6AB547;
-    border-top: solid #6AB547;
+    border-left: solid #9ceb77;
+    border-top: solid #9ceb77;
     border-right: solid #3b6421;
     border-bottom: solid #3b6421;
     color: white;
@@ -90,12 +94,11 @@
     cursor: pointer;
 }
 
-.enter-button {
+.enter-button, .edit-button {
     width: 168px;
 }
 
 .edit-button {
-    width: 168px;
     background-color: #EC4E20; 
     border-left: solid #ff997a;
     border-top: solid #ff997a;
@@ -108,5 +111,27 @@
         width: calc(100vw - 50px);
         height: calc(100vh - 50px);
         margin-top: 18px;
+        font-size: 2.5rem;
+    }
+
+    .custom-button {
+        font-size: 1.8rem;
+        width: 60px;
+        height: 50px;
+        margin: 3px;
+    }
+
+    .enter-button, .edit-button {
+        width: 126px;
+    }
+
+    .input-area {
+        font-size: 2rem;
+        width: 234px;
+        height: 37px;
+    }
+
+    .inner-page {
+        min-height: 505px;
     }
 }

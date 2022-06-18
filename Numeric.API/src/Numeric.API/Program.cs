@@ -25,6 +25,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ResponseMiddleware>();
 
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

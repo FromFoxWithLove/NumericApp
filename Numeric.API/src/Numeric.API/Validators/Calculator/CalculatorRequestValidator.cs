@@ -24,7 +24,7 @@ namespace Numeric.API.Validators.Calculator
                     .Cascade(CascadeMode.StopOnFirstFailure)
                     .Must(x => x.Length > 2 && x.Length <= 500)
                     .WithMessage("Length of expression shoul be between 3 and 500")
-                    .Must(x => Regex.IsMatch(x, pattern))
+                    .Must(x => Regex.IsMatch(Regex.Replace(x, @"\s+", ""), pattern))
                     .WithMessage("Incompatible characters used");
             });
         }
