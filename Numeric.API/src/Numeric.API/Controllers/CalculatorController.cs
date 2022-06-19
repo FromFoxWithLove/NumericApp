@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Numeric.API.Models.Calculator;
 using Numeric.BusinessLogic.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace Numeric.API.Controllers
 {
@@ -27,7 +28,7 @@ namespace Numeric.API.Controllers
         public IActionResult Calculate([FromBody] CalculatorRequest request)
         {
             var result = _service.Calculate(request.Expression);
-            return MapResponse(result, x => x);
+            return MapResponse(result, x => Regex.Replace(x, ",", "."));
         }
     }
 }

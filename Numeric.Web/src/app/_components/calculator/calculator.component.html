@@ -1,7 +1,7 @@
 <div class="page">
     <div class="inner-page">
         <div class="title centered">
-            Lets calculate!
+            <div class="title-text">Lets calculate!</div>
         </div>
         <div>
             <div class="centered input-area">
@@ -9,86 +9,83 @@
                     {{expression}}
                 </div>
             </div>
-            <!-- <form class="centered">
-                <input id="textField" class="input-area" type="text" [value]="expression" disabled>
-            </form> -->
         </div>
-        <div>
-            <div>
+        <div class="centered">
+            <div class="keyboard">
                 <div class="row">
-                    <button (click)="addCharacter('(')" class="custom-button">
+                    <div (click)="addCharacter('(')" class="custom-button">
                         (
-                    </button>
-                    <button (click)="addCharacter(')')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter(')')" class="custom-button">
                         )
-                    </button>
-                    <button (click)="addCharacter('^')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('^')" class="custom-button">
                         ^
-                    </button>
-                    <button (click)="addCharacter(' * ')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter(' * ')" class="custom-button">
                         *
-                    </button>
+                    </div>
                 </div>
                 <div class="row">
-                    <button (click)="addCharacter('7')" class="custom-button">
+                    <div (click)="addCharacter('7')" class="custom-button">
                         7
-                    </button>
-                    <button (click)="addCharacter('8')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('8')" class="custom-button">
                         8
-                    </button>
-                    <button (click)="addCharacter('9')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('9')" class="custom-button">
                         9
-                    </button>
-                    <button (click)="addCharacter(' / ')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter(' / ')" class="custom-button">
                         /
-                    </button>
+                    </div>
                 </div>
                 <div class="row">
-                    <button (click)="addCharacter('4')" class="custom-button">
+                    <div (click)="addCharacter('4')" class="custom-button">
                         4
-                    </button>
-                    <button (click)="addCharacter('5')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('5')" class="custom-button">
                         5
-                    </button>
-                    <button (click)="addCharacter('6')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('6')" class="custom-button">
                         6
-                    </button>
-                    <button (click)="addCharacter(' + ')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter(' + ')" class="custom-button">
                         +
-                    </button>
+                    </div>
                 </div>
                 <div class="row">
-                    <button (click)="addCharacter('1')" class="custom-button">
+                    <div (click)="addCharacter('1')" class="custom-button">
                         1
-                    </button>
-                    <button (click)="addCharacter('2')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('2')" class="custom-button">
                         2
-                    </button>
-                    <button (click)="addCharacter('3')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('3')" class="custom-button">
                         3
-                    </button>
-                    <button (click)="addCharacter(' - ')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter(' - ')" class="custom-button">
                         -
-                    </button>
+                    </div>
                 </div>
                 <div class="row">
-                    <button (click)="addCharacter('0')" class="custom-button">
+                    <div (click)="addCharacter('0')" class="custom-button">
                         0
-                    </button>
-                    <button (click)="addCharacter('.')" class="custom-button">
+                    </div>
+                    <div (click)="addCharacter('.')" class="custom-button">
                         .
-                    </button>
-                    <button (click)="calculate()" class="custom-button enter-button">
-                        enter
-                    </button>
+                    </div>
+                    <div (click)="calculate()" class="custom-button enter-button">
+                        ENTER
+                    </div>
                 </div>
                 <div class="row">
-                    <button (click)="removeCharacter()" class="custom-button edit-button">
-                        <<<
-                    </button>
-                    <button (click)="clear()" class="custom-button edit-button">
+                    <div (click)="removeCharacter()" class="custom-button edit-button">
+                        <<
+                    </div>
+                    <div (click)="clear()" class="custom-button edit-button">
                         CLEAR
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>

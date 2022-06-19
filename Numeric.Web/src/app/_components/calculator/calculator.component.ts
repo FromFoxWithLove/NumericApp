@@ -32,11 +32,17 @@ export class CalculatorComponent implements OnInit{
   }
 
   removeCharacter() {
-    if (this.expression[this.expression.length - 1] == ' ') {
-      this.expression = this.expression.slice(0, this.expression.length - 3);
+    if (this.isNotExpression) {
+      this.clear()
     }
     else {
-      this.expression = this.expression.slice(0, this.expression.length - 1);
+      if (this.expression[this.expression.length - 1] == ' ') {
+        this.expression = this.expression.slice(0, this.expression.length - 3);
+      }
+      else {
+        this.expression = this.expression.toString();
+        this.expression = this.expression.slice(0, this.expression.length - 1);
+      }
     }
   }
 

@@ -35,13 +35,13 @@ namespace Numeric.BusinessLogic.Services
                 if (isValid)
                 {
                     var result = _calculator.Calculate(expression);
-                    
                     if (double.IsInfinity(result))
                     {
-                        serviceResult.WithValue("Infinity");
+                        serviceResult.WithBusinessError("Infinity");
                     }
                     else
                     {
+                        result = Math.Round(result, 5);
                         serviceResult.WithValue(result.ToString());
                     }
                 }
